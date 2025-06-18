@@ -5,24 +5,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "users")
-@Data
-@NoArgsConstructor
+import java.sql.Date;
+import java.util.UUID;
+
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
+    @Column(nullable = false)
     private String name;
-
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
-
-    private String phone;
-
+    @Column(nullable = false)
     private String password;
-
-    private String role;  // USER | ADMIN | PARKING_OWNER
+    @Column(nullable = false)
+    private UserRole role;
+    @Column(name = "created_at")
+    private Date createdAt;
 }

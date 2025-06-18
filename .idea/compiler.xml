@@ -8,18 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka_server" />
         <module name="API_gateway" />
-        <module name="Parking_service" />
-        <module name="User_service" />
-        <module name="Vehicle_service" />
       </profile>
-      <profile name="Annotation profile for Payment_service" enabled="true">
+      <profile name="Annotation profile for Vehicle_service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="Parking_service" />
         <module name="Payment_service" />
+        <module name="Vehicle_service" />
+        <module name="User_service" />
       </profile>
     </annotationProcessing>
   </component>
