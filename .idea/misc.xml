@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/Parking_service/pom.xml" />
         <option value="$PROJECT_DIR$/Vehicle_service/pom.xml" />
         <option value="$PROJECT_DIR$/Payment_service/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudeconfig/pom.xml" />
       </list>
     </option>
   </component>

@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cloudeconfig" />
         <module name="eureka_server" />
         <module name="API_gateway" />
       </profile>
@@ -31,6 +32,7 @@
       <module name="Payment_service" options="-parameters" />
       <module name="User_service" options="-parameters" />
       <module name="Vehicle_service" options="-parameters" />
+      <module name="cloudeconfig" options="-parameters" />
       <module name="eureka_server" options="-parameters" />
     </option>
   </component>
