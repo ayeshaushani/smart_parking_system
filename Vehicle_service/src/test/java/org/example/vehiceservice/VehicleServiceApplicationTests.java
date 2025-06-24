@@ -1,4 +1,4 @@
-package org.example.vehicle_service;
+package org.example.vehiceservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
