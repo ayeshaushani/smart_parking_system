@@ -1,7 +1,6 @@
-package org.example.user_service.service;
+package org.example.userservice.service;
 
-
-import org.example.user_service.dto.UserDTO;
+import org.example.userservice.dto.UserDTO;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface UserService {
 
     int updateUser(UserDTO user);
 
-    int deleteUser(String email);
+    int deleteUser(String email, String password);
 
     List<UserDTO> getAll();
 

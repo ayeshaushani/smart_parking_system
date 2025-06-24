@@ -1,4 +1,4 @@
-package org.example.user_service.utill;
+package org.example.userservice.util;
 
 public class VarList {
     public static final int Continue = 100;

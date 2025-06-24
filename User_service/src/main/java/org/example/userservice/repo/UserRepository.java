@@ -1,7 +1,6 @@
-package org.example.user_service.repo;
+package org.example.userservice.repo;
 
-
-import org.example.user_service.entity.User;
+import org.example.userservice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

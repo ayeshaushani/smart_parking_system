@@ -6,25 +6,25 @@ spring:
       rule: random
     gateway:
       routes:
-        - id: parking-service
-          uri: lb://PARKING-SERVICE
+        - id: user-service
+          uri: lb://user-service
           predicates:
-            - Path=/parking-service/**
+            - Path=/api/v1/users/**
 
         - id: vehicle-service
-          uri: lb://VEHICLE-SERVICE
+          uri: lb://vehicle-service
           predicates:
-            - Path=/vehicle-service/**
+            - Path=/api/v1/vehicle/**
 
-        - id: user-service
-          uri: lb://USER-SERVICE
+        - id: parking-service
+          uri: lb://parking-service
           predicates:
-            - Path=/user-service/**
+            - Path=/api/v1/parking/**
 
         - id: payment-service
-          uri: lb://PAYMENT-SERVICE
+          uri: lb://payment-service
           predicates:
-            - Path=/payment-service/**
+            - Path=/api/v1/payments/**
 
 eureka:
   client:

@@ -1,7 +1,8 @@
-package org.example.user_service.dto;
+package org.example.userservice.dto;
 
+
+import org.example.userservice.entity.UserRole;
 import lombok.*;
-import org.example.user_service.entity.UserRole;
 
 import java.sql.Date;
 import java.util.UUID;

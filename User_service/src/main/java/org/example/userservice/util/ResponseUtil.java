@@ -1,4 +1,4 @@
-package org.example.user_service.utill;
+package org.example.userservice.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

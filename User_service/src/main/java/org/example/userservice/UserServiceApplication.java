@@ -1,4 +1,4 @@
-package org.example.user_service;
+package org.example.userservice;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

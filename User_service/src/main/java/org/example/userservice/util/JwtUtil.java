@@ -1,4 +1,4 @@
-package org.example.user_service.utill;/*
+package org.example.userservice.util;/*
 package lk.ijse.userservice.util;
 
 import io.jsonwebtoken.Claims;

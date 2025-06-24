@@ -1,11 +1,10 @@
-package org.example.user_service.service;
+package org.example.userservice.service;
 
 
-
-import org.example.user_service.dto.UserDTO;
-import org.example.user_service.entity.User;
-import org.example.user_service.repo.UserRepository;
-import org.example.user_service.utill.VarList;
+import org.example.userservice.dto.UserDTO;
+import org.example.userservice.entity.User;
+import org.example.userservice.repo.UserRepository;
+import org.example.userservice.util.VarList;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,14 +83,18 @@ throw new RuntimeException();
     }
 
 @Override
-public int deleteUser(String email1){
+public int deleteUser(String email1, String password){
       try{
           String email = email1.toLowerCase();
+          String pass = password;
 
           if(userRepository.existsUserByEmail(email)){
               User user = userRepository.findByEmail(email);
-              userRepository.delete(user);
-              return VarList.OK;
+              if(passwordEncoder.matches(pass,user.getPassword())){
+                  userRepository.delete(user);
+                  return VarList.OK;
+              }
+
           }
           return VarList.Not_Found;
       }catch (Exception e){

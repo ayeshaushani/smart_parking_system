@@ -1,9 +1,12 @@
-package org.example.user_service.controller;
+package org.example.userservice.controller;
 
-import org.example.user_service.dto.ResponseDTO;
-import org.example.user_service.dto.UserDTO;
-import org.example.user_service.service.UserService;
-import org.example.user_service.utill.VarList;
+
+import org.example.userservice.dto.ResponseDTO;
+import org.example.userservice.dto.UserDTO;
+import org.example.userservice.dto.UserDTO2;
+import org.example.userservice.entity.User;
+import org.example.userservice.service.UserService;
+import org.example.userservice.util.VarList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,7 +55,7 @@ public class UserController {
         }
     }
 
-    @PostMapping(value = "/updateUser")
+    @PutMapping(value = "/updateUser")
     public ResponseEntity<ResponseDTO>  UpdateUser(@RequestBody UserDTO user) {
         System.out.println("User Data Come to Controller :" + user);
 
@@ -86,14 +89,14 @@ public class UserController {
     }
 
     @GetMapping(value = "/getUserInfo")
-    public ResponseEntity<ResponseDTO> getMemberByUserId(@RequestBody UserDTO user){
+    public ResponseEntity<ResponseDTO> getMemberByUserId(@RequestBody UserDTO2 user){
             System.out.println("Request Accepted get User");
 
             UserDTO userDTO = userService.getUserByEmail(user.getEmail());
 
             if (userDTO == null) {
                 return ResponseEntity.ok(
-                        new ResponseDTO(VarList.OK, "not found a member", null)
+                        new ResponseDTO(VarList.Not_Found, "not found a member", null)
                 );
             } else {
                 return ResponseEntity.ok(
@@ -104,16 +107,16 @@ public class UserController {
 
 
     @DeleteMapping(value = "/deleteUser")
-    public ResponseEntity<ResponseDTO>  DeleteUser(@RequestBody UserDTO user) {
+    public ResponseEntity<ResponseDTO>  DeleteUser(@RequestBody UserDTO2 user) {
                 System.out.println("User Data Come to Controller for delete :" + user);
 
                 try {
 
-                    int res = userService.deleteUser(user.getEmail());
+                    int res = userService.deleteUser(user.getEmail(),user.getPassword());
                     switch (res) {
                         case VarList.OK -> {
                             System.out.println("Delete User Success");
-                            return ResponseEntity.ok(new ResponseDTO(VarList.OK, "User saved successfully", user));
+                            return ResponseEntity.ok(new ResponseDTO(VarList.OK, "User Delete successfully", user));
                         }
                         case VarList.Not_Found -> {
                             System.out.println("User Not Found");
