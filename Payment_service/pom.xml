@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>Payment_service</artifactId>
+    <artifactId>payment-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Payment_service</name>
-    <description>Payment_service</description>
+    <name>payment-service</name>
+    <description>payment-service</description>
     <url/>
     <licenses>
         <license/>
@@ -72,7 +72,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>Parking_service</artifactId>
+            <artifactId>parking-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

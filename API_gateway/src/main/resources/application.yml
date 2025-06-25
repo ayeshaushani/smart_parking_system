@@ -1,10 +1,16 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: api-gateway
   cloud:
-    loadbalancer:
-      rule: random
     gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
       routes:
         - id: user-service
           uri: lb://user-service
